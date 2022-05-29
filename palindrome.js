@@ -13,10 +13,34 @@ function emailParts(email) {
 function Phrase(content) {
   this.content = content; 
 
-    // Returns true for a paldindrome, false otherwise.
+  // Returns a LOUDER version of the content.
+  this.louder = function() {
+    return louderContent = this.content.toUpperCase();
+  }
+
+  // Processes input for palindrome testing.
+  this.processor = function(string) {
+    return string.toLowerCase();
+  }
+
+  this.processedContent = function processedContent() {
+    return this.processor(this.content);
+  }
+
+  // Returns true if the phrase is a palindrome, false otherwise.
   this.palindrome = function palindrome() {
-    let processedContent = this.content.toLowerCase();
-    return processedContent === reverse(processedContent);
+    return this.processedContent() === reverse(this.processedContent());
   }
 }
 
+function TranslatedPhrase(content, translation) {
+  this.content = content;
+  this.translation = translation;
+
+  // Returns translation processed for palindrome testing.
+  this.processedContent = function processedContent() {
+    return this.processor(this.translation);
+  }
+}
+
+TranslatedPhrase.prototype = new Phrase();
