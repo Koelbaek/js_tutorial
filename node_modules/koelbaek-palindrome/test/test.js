@@ -24,14 +24,24 @@ describe("Phrase", function() {
     it("Should return true for a plaindrome with punctuation", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
-    })
-  });
+    });
+
+  it("Should return false for an emptystring", function() {
+    let emptyPhrase = new Phrase("");
+    assert(!emptyPhrase.palindrome());
+  })
+});
 
   // Phrase#letters
   describe("#letters", function() {
+    
     it("Should return only letters", function (){
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert.strictEqual("MadamImAdam", punctuatedPalindrome.letters());
+    });
+    it("Should return the empty string on no match", function() {
+      let noLetters = new Phrase("1234.56");
+      assert.strictEqual(noLetters.letters(), "");
     });
   })
 });
