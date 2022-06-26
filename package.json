@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "koelbaek-palindrome": "^0.1.1"
+    "fs": "^0.0.1-security",
+    "jsdom": "^20.0.0",
+    "koelbaek-palindrome": "^0.1.1",
+    "urllib": "^2.38.0"
   }
 }
